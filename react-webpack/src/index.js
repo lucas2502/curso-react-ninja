@@ -15,7 +15,7 @@ const renderApp = (NextApp) => {
     )    
 }
 
-renderApp(Aap)
+renderApp(App)
 
 if(module.hot){
     module.hot.accept('./app', () => {
