@@ -1,9 +1,23 @@
 'use strict'
 
-import React from 'react'
+import React, { Component } from 'react'
 import Title from './title'
+import Square from './square' 
 
-const App = React.createClass({
+class App extends Component{
+    render(){
+        return (
+            <div className="container">
+                {['blue', 'red', 'green'].map((square) =>(
+                    <Square key={square} color={square} />
+                ))}
+            </div>
+        )
+    }
+}
+
+
+/*const App = React.createClass({
     render: function(){
         return (
             <div className="container">
@@ -11,5 +25,5 @@ const App = React.createClass({
             </div>
         )
     }
-})
+})*/
 export default App
