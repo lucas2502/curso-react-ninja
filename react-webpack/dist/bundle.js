@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "7cc44009087571dd6ea8"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "efaef58cf9a4ec0de115"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -40322,10 +40322,10 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                { className: 'container' },
-	                ['blue', 'red', 'green'].map(function (square) {
-	                    return _react2.default.createElement(_square2.default, { key: square, color: square });
-	                })
+	                { className: 'container', onClick: function onClick(e) {
+	                        alert('clicou');
+	                    } },
+	                _react2.default.createElement(_square2.default, null)
 	            );
 	        }
 	    }]);
