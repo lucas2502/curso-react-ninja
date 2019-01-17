@@ -1,7 +1,6 @@
 'use strict'
 
 import React, { Component } from 'react'
-import Title from './title'
 import Square from './square' 
 
 class App extends Component{
@@ -16,14 +15,4 @@ class App extends Component{
     }
 }
 
-
-/*const App = React.createClass({
-    render: function(){
-        return (
-            <div className="container">
-                <Title name='Lucas ' lastname='Gonçalves'/>
-            </div>
-        )
-    }
-})*/
 export default App
