@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "efaef58cf9a4ec0de115"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4dd532d6d11ebe56ad35"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -40296,9 +40296,9 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _square = __webpack_require__(428);
+	var _button = __webpack_require__(428);
 	
-	var _square2 = _interopRequireDefault(_square);
+	var _button2 = _interopRequireDefault(_button);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -40314,7 +40314,12 @@
 	    function App() {
 	        _classCallCheck(this, App);
 	
-	        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
+	
+	        _this.state = {
+	            text: 'Lucas Gonçalves'
+	        };
+	        return _this;
 	    }
 	
 	    _createClass(App, [{
@@ -40322,10 +40327,8 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                { className: 'container', onClick: function onClick(e) {
-	                        alert('clicou');
-	                    } },
-	                _react2.default.createElement(_square2.default, null)
+	                { className: 'container' },
+	                this.state.text
 	            );
 	        }
 	    }]);
@@ -40365,20 +40368,17 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var Square = function Square(_ref) {
-	    var color = _ref.color;
-	    return _react2.default.createElement('div', { style: {
-	            background: color,
-	            height: '100px',
-	            width: '100px'
-	        } });
+	var Button = function Button(_ref) {
+	    var children = _ref.children,
+	        handleClick = _ref.handleClick;
+	    return _react2.default.createElement(
+	        'button',
+	        { classname: 'main-button', onCLick: handleClick },
+	        children
+	    );
 	};
 	
-	Square.defaultProps = {
-	    color: 'red'
-	};
-	
-	var _default = Square;
+	var _default = Button;
 	exports.default = _default;
 	;
 	
@@ -40387,9 +40387,9 @@
 	        return;
 	    }
 	
-	    __REACT_HOT_LOADER__.register(Square, 'Square', '/root/curso-react-ninja/react-webpack/src/square.js');
+	    __REACT_HOT_LOADER__.register(Button, 'Button', '/root/curso-react-ninja/react-webpack/src/button.js');
 	
-	    __REACT_HOT_LOADER__.register(_default, 'default', '/root/curso-react-ninja/react-webpack/src/square.js');
+	    __REACT_HOT_LOADER__.register(_default, 'default', '/root/curso-react-ninja/react-webpack/src/button.js');
 	})();
 
 	;
