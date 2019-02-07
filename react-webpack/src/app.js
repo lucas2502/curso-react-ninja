@@ -16,10 +16,7 @@ class App extends Component{
         this.timer
     }
 
-    componentWillReceiveProps (nextProps) {
-        console.log('componentWillReceiveProps', this.props, nextProps)
-    }
-
+    
     componentWillMount () {
         console.log('componentWillMount')
     }
