@@ -3,8 +3,8 @@
 import React from 'react'
 
 
-const Actions = ({ clssName }) => (
-    <div className={ clssName }>
+const Actions = () => (
+    <div className='action'>
         <button>Ver repositorios</button>
         <button>Ver favoritos</button>
     </div>
