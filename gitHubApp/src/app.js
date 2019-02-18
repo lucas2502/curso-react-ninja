@@ -7,11 +7,30 @@ import AppContent from './components/app-content';
 class App extends Component {
     constructor () {
         super()
-        this.state = {}
+        this.state = {
+            userinfo: {
+                username: 'Lucas Gonçalves',
+                repos: 12,
+                followers: 10,
+                following: 12
+            },
+            repos: [{
+                name: 'Repo',
+                link: '#'
+            }],
+            starred: [{
+                name: 'Repo',
+                link: '#'
+            }]
+        }
     }
     render(){
         return (
-            <AppContent />
+            <AppContent 
+                userinfo={this.state.userinfo}
+                repos={this.state.repos}
+                starred={this.state.starred}
+            />
         )
     } 
 }
