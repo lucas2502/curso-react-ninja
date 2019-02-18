@@ -3,10 +3,10 @@
 import React from 'react'
 
 
-const Actions = () => (
+const Actions = ({getRepos, getStarres}) => (
     <div className='action'>
-        <button>Ver repositorios</button>
-        <button>Ver favoritos</button>
+        <button onClick={getRepos}>Ver repositorios</button>
+        <button onClick={getStarres}>Ver favoritos</button>
     </div>
 
 )

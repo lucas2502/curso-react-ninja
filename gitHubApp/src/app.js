@@ -2,7 +2,6 @@
 
 import React, { Component } from 'react'
 import ajax from '@fdaciuk/ajax'
-
 import AppContent from './components/app-content';
 
 class App extends Component {
@@ -18,13 +17,26 @@ class App extends Component {
         const value = e.target.value
         const keyCode = e.which || e.keyCode
         const ENTER = 13
-            if( keyCode === ENTER){
-                ajax().get(`https://api.github.com/users/${value}`)
-                .then((result) =>{
-                    console.log(result)
-                })
-            }
+
+        if( keyCode === ENTER){
+            ajax().get(`https://api.github.com/users/${value}`)
+            .then((result) => {
+            this.setState({
+                userinfo: {
+                    username: result.name,
+                    photo: result.avatar_url,
+                    login: result.login,
+                    repos: result.public_repos,
+                    followers: result.followers,
+                    following: reult.following
+                }
+              
+
+
+            })
+            })
         }
+    }
     
 
     render(){
@@ -34,6 +46,8 @@ class App extends Component {
                 repos={this.state.repos}
                 starred={this.state.starred}
                 handleSearch={(e) => this.handleSearch(e)}
+                getRepos={() => this.getRepos}
+                getStarres={() => this.getStarres}
             />
         )
     } 

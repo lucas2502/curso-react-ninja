@@ -1,8 +1,8 @@
 'use strict'
 
-import React from 'react'
+import React, { PropTypes } from 'react'
 
-const Search = ( handleSearch ) => (
+const Search = ({ handleSearch }) => (
     <div className='search'>
         <input 
             type='search' 
@@ -12,8 +12,8 @@ const Search = ( handleSearch ) => (
     </div>
 )
 
-Search.popRypes = {
-    handleSearch: React.PropTypes.func.isRequired
+Search.propTypes = {
+    handleSearch: PropTypes.func.isRequired,
 }
 
 

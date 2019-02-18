@@ -18,7 +18,7 @@ const UserInfo = ({ userinfo }) => (
     </div>
 )
 
-UserInfo.PropTypes = {
+UserInfo.propTypes = {
     userinfo: PropTypes.shape({
         username: PropTypes.string.isRquired,
         photo: PropTypes.string.isRequired,
