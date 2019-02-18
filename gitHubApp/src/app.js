@@ -28,16 +28,28 @@ class App extends Component {
                     login: result.login,
                     repos: result.public_repos,
                     followers: result.followers,
-                    following: reult.following
+                    following: result.following
                 }
-              
-
-
             })
             })
         }
     }
     
+    getRepos (type) {
+        return (e) => {
+            ajax().get(`https://api.github.com/users/lucas2502/${type}`)
+            .then((result) => {
+                    this.setState({
+                        [type]: result.map((repo) => {
+                            return {
+                                name: repo.name,
+                                link: repo.html_url
+                            }
+                        })
+                    })
+                })
+        }
+    }
 
     render(){
         return (
@@ -46,8 +58,8 @@ class App extends Component {
                 repos={this.state.repos}
                 starred={this.state.starred}
                 handleSearch={(e) => this.handleSearch(e)}
-                getRepos={() => this.getRepos}
-                getStarres={() => this.getStarres}
+                getRepos={this.getRepos('repos')}
+                getStarres={this.getRepos('starred')}
             />
         )
     } 
