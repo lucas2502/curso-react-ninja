@@ -3,7 +3,7 @@
 import React, { PropTypes } from 'react'
 
 
-const Actions = ({getRepos, getStarred}) => (
+const Actions = ({ getRepos, getStarred }) => (
     <div className='action'>
         <button onClick={getRepos}>Ver repositorios</button>
         <button onClick={getStarred}>Ver favoritos</button>
