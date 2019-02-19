@@ -9,15 +9,17 @@ import Repos from './repos'
 const AppContent = ({
     userinfo, 
     repos, 
-    starred, 
+    starred,
+    isFetching, 
     handleSearch, 
     getRepos, 
-    getStarres 
+    getStarred 
     }) => (
     <div className='app'>
         <Search handleSearch={handleSearch} />
+        {isFetching && <div>Carregando...</div>}
         {!!userinfo && <UserInfo userinfo={userinfo} />}
-        {!!userinfo && <Actions getRepos={getRepos} getStarres={getStarres} />}
+        {!!userinfo && <Actions getRepos={getRepos} getStarred={getStarred} />}
         
         {!!repos.lenght && 
             <Repos 
@@ -29,14 +31,17 @@ const AppContent = ({
             <Repos 
                 className='starred' 
                 title='Favoritos' 
-                repos={repos}
+                repos={starred}
             />}
     </div>
 )
 
-AppContent.protoTypes = {
+AppContent.propTypes = {
     userinfo: PropTypes.object,
     repos: PropTypes.array.isRequired,
-    starred: PropTypes.array.isRequired 
+    starred: PropTypes.array.isRequired,
+    handleSearch: PropTypes.func.isRequired,
+    getRepos: PropTypes.func.isRequired,
+    getStarred: PropTypes.func.isRequired
 }
 export default AppContent
