@@ -27,6 +27,15 @@ it('map([1, 2], (item, index, array) => array) should return [[1, 2], [1, 2]]', 
     expect(map([1, 2], (item, index, array) => array)).to.be.deep.equal([[1, 2], [1, 2]])
 })
 
-it('map([1, 2]) shold throw an error witch message "func is not a function"', () => {
-    expect(map[1, 2]).to.be.throw('func is not a function')
+it('map() should return []', () => {
+    expect(map()).to.be.deep.equal([])
 })
+
+it('map([1, 2], (item, index, array) => array) shold return [[1.2], [1, 2]]', () => {
+    expect(map([1, 2], (item, index, array) => array)).to.be.deep.equal([[1, 2], [1, 2]])
+})
+
+/**
+ * Video Udemy 76 M2#A10 TDD
+ * Time: 27:47
+ */
