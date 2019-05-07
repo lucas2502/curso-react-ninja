@@ -2,7 +2,7 @@
 
 const every = (arr, func) => {
     for( let i in arr){
-        if (!func(arr[i])){
+        if (!func(arr[i], i, arr)){
             return false
         }
     }
